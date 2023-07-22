@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>playlist</title>
+    <!-- ? Fav Icon -->
+    <link rel="icon" type="image/png" href="img/music.jpg" />
+    <!-- ? Arquivo CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- ? Script JS Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dados..js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        
+
+        <div class="collapse navbar-collapse" id="navBarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li>
+              <a class="nav-link active" aria-current="page" href="#tabmusic"
+                >Musicas Disponiveis </a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                id="dropGeneros"
+                role="button"
+                data-bs-toggle="dropdown"
+                href="#drop"
+                aria-expanded="false"
+              >
+                Musicas por Categoria
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="#gser">Sertanejo</a></li>
+                <li><a class="dropdown-item" href="#gfun">funk</a></li>
+                <li><a class="dropdown-item" href="#grap">rap</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#cadmusic">Cadastrar Musicas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="display-1 text-center mb-5 mt-3" id="topo">Playlist</h1>
+
+    <div class="container">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nome Da musica</th>
+            <th scope="col">Cantor</th>
+            <th scope="col">Lançamento</th>
+            <th scope="col">Gêneros</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th class="text-center table-primary" colspan="5" id="gser">
+              Sertanejo
+            </th>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td scope="col">Leão</td>
+            <td scope="col">Marilia Mendonça</td>
+            <td scope="col">09 de Dezembro de 2022</td>
+            <td scope="col">Sertanejo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td scope="col">A culpa é nossa</td>
+            <td scope="col"> Maiara e Maraísa</td>
+            <td scope="col">15 de Dezembro de 2022</td>
+            <td scope="col">Sertanejo</td>
+          </tr>
+
+          <tr>
+            <th class="text-center table-primary" colspan="5" id="gfun">
+              Funk
+            </th>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td scope="col">Sou Pretin, Cabelin Enroladin </td>
+            <td scope="col">MC Paulin Da Capital</td>
+            <td scope="col">18 de março de 2022</td>
+            <td scope="col">Funk</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td scope="col">TÁ OK</td>
+            <td scope="col">Dennis e Kevin O Chris</td>
+            <td scope="col">05 de maio de 2023</td>
+            <td scope="col">Funk</td>
+          </tr>
+
+          <tr>
+            <th class="text-center table-primary" colspan="5" id="grap">
+              Rap
+            </th>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td scope="col">Vida Loka, Pt. 1</td>
+            <td scope="col">Racionais </td>
+            <td scope="col">10 de Março de 2001</td>
+            <td scope="col">Rap</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td scope="col">RAP LORD</td>
+            <td scope="col">Haikaiss - Jonas Bento</td>
+            <td scope="col">20 de Março de 2017</td>
+            <td scope="col">Rap</td>
+          </tr>
+          <tr id="insertRow"></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-5 mt-5">
+      <hr class="border-primary border-3 opacity-75" />
+    </div>
+
+    <div class="container mb-5" id="cadmusic">
+      <h2 class="text-center mb-4">Cadastro de musicas</h2>
+
+      <form name="register" onsubmit="event.preventDefault()">
+        <!-- ? Cadastro do Código e do titulo -->
+        <div class="row">
+          <div class="mb-3 col">
+            <label for="codFilm" class="form-label">Código</label>
+            <input type="text" class="form-control" id="codFilm" name="cod" />
+          </div>
+
+          <div class="mb-3 col">
+            <label for="nameMusic" class="form-label">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              id="namemusic"
+              name="name"
+            />
+          </div>
+        </div>
+
+        <!-- ? Cadastro de Diretor e Lançamento -->
+        <div class="row">
+          <div class="mb-3 col">
+            <label for="cantorMusic" class="form-label">Cantor</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cantorMusic"
+              name="cantor"
+            />
+          </div>
+
+          <div class="mb-3 col">
+            <label for="yearFilm" class="form-label">Lançamento</label>
+            <input
+              type="text"
+              class="form-control"
+              id="yearFilm"
+              placeholder="DD de MM de AA"
+              name="date"
+            />
+          </div>
+        </div>
+
+        <!-- ? Cadastro de Gênero -->
+        <p>Selecione o Gênero</p>
+        <div class="row mt-3">
+          <div class="col form-check ms-5">
+            <input
+              type="radio"
+              id="radioGSer"
+              name="radio"
+              class="form-check-input"
+              value="sertanejo"
+            />
+            <label for="radioGSer" class="form-label">Sertanejo</label>
+          </div>
+          <div class="col form-check">
+            <input
+              type="radio"
+              id="radioGFun"
+              name="radio"
+              class="form-check-input"
+              value="funk"
+            />
+            <label for="radioGFun" class="form-label">Funk </label>
+          </div>
+          <div class="col form-check">
+            <input
+              type="radio"
+              id="radioGRap"
+              name="radio"
+              class="form-check-input"
+              value="rap"
+            />
+            <label for="radioGRap" class="form-label">Rap</label>
+          </div>
+        </div>
+
+        <!-- ? Botão de enviar -->
+        <div class="col-auto d-flex justify-content-center">
+          <button
+            type="submit"
+            onclick="validationForm(); insert()"
+            class="btn btn-primary mt-3"
+          >
+            Cadastrar
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
